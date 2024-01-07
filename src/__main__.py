@@ -1,10 +1,10 @@
 import os
 
-from src.const import IGNORE_INPUT_FILES, INPUT_DIR, TG_MAX_HEIGHT, TG_MAX_WIDTH
-from src.enums import Color
+from src.const import IGNORE_INPUT_FILES, INPUT_DIR, TG_MAX_HEIGHT, TG_MAX_WIDTH, FRAME_SIZE
+from src.enums import Color, Format
 from src.image_container import ImageContainer
 from src.pipeline import Pipeline
-from src.steps.png_converter import PNGConverter
+from src.steps.image_saver import ImageSaver
 from src.steps.frame_adder import FrameAdder
 from src.steps.size_changer import SizeChanger
 
@@ -21,8 +21,8 @@ def main() -> None:
 def get_pipeline() -> Pipeline:
     steps = [
         SizeChanger(new_width=TG_MAX_WIDTH, new_height=TG_MAX_HEIGHT),
-        FrameAdder(color=Color.WHITE),
-        PNGConverter()
+        FrameAdder(color=Color.WHITE, size=FRAME_SIZE),
+        ImageSaver(output_format=Format.PNG)
     ]
     pipeline = Pipeline(steps)
 
