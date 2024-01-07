@@ -1,2 +1,8 @@
 .venv
 .idea
+
+input/*
+output/*
+
+!input/.gitkeep
+!output/.gitkeep
