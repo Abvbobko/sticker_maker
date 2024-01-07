@@ -8,8 +8,11 @@ class SizeChanger(Step):
         self._height = new_height
 
     def run(self, image: ImageContainer) -> ImageContainer:
+        image_name = image.name
         image = image.image
         image = image.resize((self._width, self._height))
 
-        return ImageContainer(image)
-
+        return ImageContainer(
+            image=image,
+            image_name=image_name
+        )

@@ -12,7 +12,8 @@ class FrameAdder(Step):
         self._border = size
 
     def run(self, image: ImageContainer) -> ImageContainer:
+        image_name = image.name
         image = image.image
         image = ImageOps.expand(image, border=self._border, fill=self._color)
 
-        return ImageContainer(image=image)
+        return ImageContainer(image=image, image_name=image_name)

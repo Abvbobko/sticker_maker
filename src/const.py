@@ -1,5 +1,5 @@
-INPUT_DIR = "../input"
-OUTPUT_DIR = "../output"
+INPUT_DIR = "input"
+OUTPUT_DIR = "output"
 
 IGNORE_INPUT_FILES = {".gitkeep"}
 
