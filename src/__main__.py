@@ -29,7 +29,7 @@ def main() -> None:
 def get_pipeline() -> Pipeline:
     steps = [
         SizeChanger(new_width=TG_MAX_WIDTH, new_height=TG_MAX_HEIGHT),
-        FrameAdder(color=Color.WHITE, size=FRAME_SIZE),
+        FrameAdder(color=Color.BLACK, size=FRAME_SIZE),
         ImageSaver(output_dir=OUTPUT_DIR, output_format=Format.PNG)
     ]
     pipeline = Pipeline(steps)
